@@ -1,0 +1,795 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.top-nav {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 110px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.logo-title img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-title h1 {
+  font-size: 22px;
+  color: #333;
+  margin: 0;
+}
+
+.metrics-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .metric-info {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      color: #007bff;
+      display: inline-block;
+    }
+
+    .custom-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .custom-dropdown .dropdown-option {
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .custom-dropdown .dropdown-option:hover {
+      background-color: #f0f0f0;
+    }
+
+    .custom-dropdown.show {
+      display: block;
+    }
+
+.metric img {
+  height: 30px;
+  width: 30px;
+}
+
+.metric strong {
+  font-size: 13px;
+  display: block;
+  color: #000;
+  line-height: 1;
+  text-align: center;
+}
+
+.metric span {
+  font-size: 11px;
+  color: #666;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.top-nav {
+  border-bottom: 15px solid green;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  gap: 25px;
+  align-items: stretch;
+  height: 200px; /* reduced height */
+}
+
+.dashboard-box {
+  background-color: transparent;
+  padding: 6px;
+  border-radius: 6px;
+  box-shadow: none;
+  margin-top: 0;
+  height: 180px; /* reduced height */
+  
+}
+
+.dashboard-box h3 {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.dashboard-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-box ul li {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  white-space: nowrap;
+  gap: 6px;
+}
+
+.dashboard-box ul li span:first-child {
+  width: 80px;
+  text-align: left;
+  margin-right: 50px;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.dashboard-box .bar {
+  width: 100px;
+  height: 13px;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.dashboard-box ul li .bar > div {
+  height: 100%;
+  background-color: green;
+  border-radius: 0;
+  width: 100%;
+}
+
+.dashboard-box ul li span:last-child {
+  width: 25px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+
+.line-chart {
+  text-align: center;
+}
+
+.line-chart .chart-header {
+  display: flex;
+  justify-content: space-between; /* separates h3 and p to ends */
+  align-items: center;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.line-chart .chart-header h3 {
+  font-size: 12px;
+  margin: 0;
+}
+
+.line-chart .chart-note {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.line-chart img {
+  width: 100%;
+  height: 95%;
+  object-fit: fill;
+}
+
+.line-chart .cumulative {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.map .map-header {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* spacing between heading and dots */
+}
+
+.map .map-header h3 {
+  font-size: 12px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.map-legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.map-legend .red {
+  background-color: red;
+}
+
+.map-legend .darkblue {
+  background-color: darkblue;
+}
+
+.map-legend .skyblue {
+  background-color: skyblue;
+}
+
+.map-legend .green {
+  background-color: green;
+}
+
+.map img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  height: 100%;
+}
+
+/* Third row */
+.dashboard-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 5px 5px 0 5px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 200px;
+  overflow-x: hidden; /* remove horizontal scrolling */
+  overflow-y: hidden; /* remove vertical scrolling */
+}
+
+
+
+/* Progress Section */
+.progress-section {
+  width: fit-content; /* Shrinks to content */
+  max-width: 100%;    /* Prevents overflow */
+  font-family: sans-serif;
+  margin-top: 0;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;           /* Reduced space between bar and percentage */
+  margin-left: 13px;   /* Aligned with label */
+}
+
+
+.progress-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.progress-section h4{
+  margin-top: 0;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.label {
+  font-size: 10px;
+  color: #444;
+  margin-bottom: 4px;
+  margin-left: 13px;
+  margin-top: 0px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-left: 9px;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 150px; /* reduced horizontal length */
+  background: #ccc;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  flex: none; /* prevents it from stretching */
+  margin-bottom: 6px;
+}
+
+
+.fill {
+  height: 100%;
+  position: relative;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.pill {
+  width: 22px;
+  height: 22px;
+  background: rgb(247, 246, 246);
+  border-radius: 50%;
+  position: absolute;
+  top: -2.5px;
+  right: 0;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  margin-top: 1.5px;
+}
+
+.percentage {
+  font-weight: bold;
+  font-size: 13px;
+  color: #1e4aa5;
+  width: 45px;
+  text-align: left;
+}
+
+/* Specific bars */
+.progress-bar.used .fill {
+  width: 75%;
+  background: linear-gradient(to right, #3e4c6d, #a5a5a5);
+}
+
+.progress-bar.total .fill {
+  width: 100%;
+  background: linear-gradient(to right, #4caf50, #9ccc65);
+}
+
+.progress-bar.remaining .fill {
+  width: 25%;
+  background: linear-gradient(to right, #b2dfdb, #9e9e9e);
+}
+
+/* Hover effect */
+.progress-bar:hover .fill {
+  filter: brightness(1.2);
+}
+
+/* Chart Section */
+.chart-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  padding-left: 0;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+.bubble-chart, .gauge, .highlight, .monthly-usage {
+  flex: 1;
+  min-width: 200px;
+  margin-left: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+
+.bubble-chart-box img {
+  display: block;
+  width: 110%;             /* smaller width */
+  height: 150px;           /* smaller height */
+  border-radius: 6px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.monthly-usage img {
+  width: 80%;
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between; /* Push items to ends */
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;          /* Prevents wrapping */
+  overflow: hidden;             /* Hides overflow text */
+  text-overflow: ellipsis;      /* Adds "..." if text overflows */
+  max-width: 70%;               /* Adjust width to fit next to legend */
+  padding-right: 20px;
+}
+
+
+.legend {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.legend span {
+  font-size: 12px;
+  color: #444;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.dark-blue {
+  background-color: #1e4aa5;
+}
+
+.green {
+  background-color: #4caf50;
+}
+
+.gauge-box .title {
+  font-size: 12px;
+  color: #373535;
+  margin-left: 100px;
+}
+
+.gauge-box img {
+  width: 250px;            /* Control the image size */
+  height: 100px;
+  margin-top: 45px;
+  margin-left: 30px;
+}
+
+.gauge-box .gauge-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1e4aa5;
+  margin-left: 50px;
+}
+.gauge-value {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Highlights */
+.highlight-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.highlight-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin:0;
+}
+
+.highlight-box .box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
+.box {
+  position: relative;
+  flex: 1;
+  max-width: 50%; /* keep both boxes in the same row */
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 2px;
+}
+
+.background-img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  display: block;
+  margin-top: 20px;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.content h4 {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.content p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 70px;
+
+}
+
+.monthly-usage .title {
+  margin-bottom: 5px;
+  margin-left: 0;
+  padding-left: 0;
+}
+.monthly-usage-box img {
+  max-width: 100%;     /* Ensures the image doesn't overflow its container */
+  height: auto;        /* Maintains the image's aspect ratio */
+  display: block;
+  margin: 0 auto;      /* Optional: center the image */
+  max-height: 300px;   /* Optional: control vertical size */
+  margin-top: 20px;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dashboard Row Layout */
+.chart-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  height: 210px;
+}
+
+
+/* Canvas Wrapper Styling */
+.chart-box {
+  margin: 0;
+  /* If any extra styling needed for wrapper, add here */
+}
+.chart-image {
+  width: 300px;
+  height: 230px;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+  margin: 0;
+}
+
+/* Individual Chart Sizes */
+#stackedBarChart {
+  width: 220px !important;
+  height: 200px !important;
+}
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem; /* adjust to match h6 size if needed */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 4px;
+  border-radius: 2px;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+
+#lineChart {
+  width: 500px !important;
+  height: 200px !important;
+  margin: 0 !important;
+}
+.chart-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.legend {
+  display: flex;
+  gap: 5px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 10px solid;
+  margin-right: 4px;
+}
+
+.blue {
+  border-right-color: blue;
+}
+
+.green {
+  border-right-color: green;
+}
+
+
+
+#userInteractionsChart {
+  width: 220px !important;
+  height: 200px !important;
+  margin: 0 !important;
+}
+
+/* Canvas Styles */
+canvas {
+  display: block;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 0 !important;
+}
+
+.lead-gen-box {
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  min-width: 250px;
+}
+
+.lead-region {
+  margin-bottom: 15px;
+}
+
+.lead-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  gap: 6px;
+}
+
+.lead-marker-dot {
+  width: 10px;
+  height: 6px;
+  background-color: red;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.lead-label {
+  font-size: 12px;
+  flex-grow: 1;
+}
+
+.lead-value {
+  font-size: 12px;
+}
+
+
+.lead-bar-wrapper {
+  position: relative;
+  height: 20px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+}
+
+.lead-bar {
+  height: 100%;
+  position: relative;
+}
+
+.lead-bar.green {
+  background-color: #4CAF50;
+}
+
+.lead-bar.navy {
+  background-color: #1E3A8A;
+}
+
+.lead-marker {
+  width: 6px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lead-marker.left {
+  left: 0;
+}
+
+.lead-marker.right {
+  right: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: hidden; /* Prevent vertical scrolling */
+}
